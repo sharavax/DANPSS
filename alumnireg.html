@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANPSS Alumni Registration</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/css/app.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark app-navbar sticky-top">
+  <div class="container">
+    <a class="navbar-brand app-brand" href="/danpss/index.html">DANPSS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" data-nav href="/danpss/index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" data-nav href="/danpss/forms.html">Forms Hub</a></li>
+        <li class="nav-item"><a class="nav-link" data-nav href="/danpss/dashboard">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" data-nav href="/danpss/login.html">Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="page-shell">
+  <div class="form-shell">
+    <div class="form-card">
+      <div class="text-center mb-2"><span class="kicker">Alumni Onboarding</span></div>`r`n      <h1 class="section-title text-center">Alumni Registration</h1>
+      <p class="section-muted text-center">Create your alumni profile and career details for DANPSS.</p>
+      <div id="alumniFormMessage" class="alert alert-danger d-none" role="alert"></div>
+      <form action="/danpss/alumni/register" method="post" onsubmit="return validateAlumniForm()" novalidate>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label" for="alumniName">Full Name</label>
+            <input type="text" id="alumniName" name="alumniName" class="form-control" maxlength="100" required>
+            <div class="invalid-feedback">Name is required.</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="alumniEmail">Email</label>
+            <input type="email" id="alumniEmail" name="alumniEmail" class="form-control" maxlength="100" required>
+            <div class="invalid-feedback">Valid email is required.</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="alumniPhone">Phone Number</label>
+            <input type="tel" id="alumniPhone" name="alumniPhone" class="form-control" inputmode="numeric" maxlength="10" required>
+            <div class="invalid-feedback">Phone number must be 10 digits.</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="alumniGraduationYear">Graduation Year</label>
+            <input type="number" id="alumniGraduationYear" name="alumniGraduationYear" class="form-control" min="1990" max="2100" required>
+            <div class="invalid-feedback">Year must be between 1990 and 2100.</div>
+          </div>
+          <div class="col-12">
+            <label class="form-label" for="alumniDepartment">Department</label>
+            <input type="text" id="alumniDepartment" name="alumniDepartment" class="form-control" maxlength="50" required>
+            <div class="invalid-feedback">Department is required.</div>
+          </div>
+        </div>
+
+        <h2 class="form-section-title">Professional Details</h2>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label" for="alumniCompany">Company</label>
+            <input type="text" id="alumniCompany" name="alumniCompany" class="form-control" maxlength="100" required>
+            <div class="invalid-feedback">Company is required.</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="alumniDesignation">Designation</label>
+            <input type="text" id="alumniDesignation" name="alumniDesignation" class="form-control" maxlength="100" required>
+            <div class="invalid-feedback">Designation is required.</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="alumniExperience">Experience (Years)</label>
+            <input type="number" id="alumniExperience" name="alumniExperience" class="form-control" min="0" max="60" required>
+            <div class="invalid-feedback">Enter non-negative experience.</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="alumniPass">Password</label>
+            <input type="password" id="alumniPass" name="alumniPass" class="form-control" minlength="6" required>
+            <div class="invalid-feedback">Minimum 6 characters.</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="alumniCPass">Confirm Password</label>
+            <input type="password" id="alumniCPass" name="alumniCPass" class="form-control" minlength="6" required>
+            <div class="invalid-feedback">Passwords must match.</div>
+          </div>
+        </div>
+
+        <div class="d-grid mt-4">
+          <button type="submit" class="btn btn-primary">Register Alumni</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <footer class="page-footer">&copy; 2026 DANPSS | Alumni Engagement and Opportunity Contribution</footer>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="validation.js"></script>
+<script src="assets/js/app-ui.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  initFormStatus("alumniFormMessage", {
+    missing_fields: "Please complete all required alumni details.",
+    invalid_email: "Enter a valid email address.",
+    invalid_phone: "Phone number must contain exactly 10 digits.",
+    invalid_graduation_year: "Graduation year must be between 1990 and 2100.",
+    invalid_experience: "Experience must be a non-negative number.",
+    password_mismatch: "Password and confirm password must match.",
+    invalid_password: "Password must contain at least 6 characters.",
+    server_error: "Unable to save alumni registration right now. Please try again."
+  });
+});
+</script>
+</body>
+</html>
+

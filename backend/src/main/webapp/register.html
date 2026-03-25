@@ -4,86 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DANPSS Registration</title>
-<<<<<<< HEAD
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="assets/css/app.css" rel="stylesheet">
-</head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark app-navbar sticky-top">
-  <div class="container">
-    <a class="navbar-brand app-brand" href="/danpss/index.html">DANPSS</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"><span class="navbar-toggler-icon"></span></button>
-    <div class="collapse navbar-collapse" id="menu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" data-nav href="/danpss/index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" data-nav href="/danpss/forms.html">Forms Hub</a></li>
-        <li class="nav-item"><a class="nav-link" data-nav href="/danpss/dashboard">Dashboard</a></li>
-        <li class="nav-item"><a class="nav-link" data-nav href="/danpss/register.html">Register</a></li>
-        <li class="nav-item"><a class="nav-link" data-nav href="/danpss/login.html">Login</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<main class="page-shell">
-  <div class="form-shell">
-    <div class="form-card">
-      <div class="text-center mb-2"><span class="kicker">One Account Setup</span></div>`r`n      <h1 class="section-title text-center">Create DANPSS Account</h1>
-      <p class="section-muted text-center">Register as Student, Alumni, or Placement Officer.</p>
-      <div id="registerFormMessage" class="alert alert-danger d-none" role="alert"></div>
-      <form action="/danpss/register" method="post" onsubmit="return validateRegisterForm()" novalidate>
-        <div class="row g-3">
-          <div class="col-md-6">
-            <label class="form-label" for="regName">Full Name</label>
-            <input type="text" id="regName" name="regName" class="form-control" maxlength="100" required>
-            <div class="invalid-feedback">Name is required.</div>
-          </div>
-          <div class="col-md-6">
-            <label class="form-label" for="role">Role</label>
-            <select id="role" name="role" class="form-select" required>
-              <option value="Student">Student</option>
-              <option value="Alumni">Alumni</option>
-              <option value="Placement Officer">Placement Officer</option>
-            </select>
-          </div>
-          <div class="col-md-6">
-            <label class="form-label" for="regEmail">Email</label>
-            <input type="email" id="regEmail" name="regEmail" class="form-control" maxlength="100" required>
-            <div class="invalid-feedback">Enter a valid email.</div>
-          </div>
-          <div class="col-md-6">
-            <label class="form-label" for="regPhone">Phone Number</label>
-            <input type="tel" id="regPhone" name="regPhone" class="form-control" inputmode="numeric" maxlength="10" required>
-            <div class="invalid-feedback">Phone number must be 10 digits.</div>
-          </div>
-          <div class="col-md-6">
-            <label class="form-label" for="regPass">Password</label>
-            <input type="password" id="regPass" name="regPass" class="form-control" minlength="6" required>
-            <div class="invalid-feedback">Minimum 6 characters.</div>
-          </div>
-          <div class="col-md-6">
-            <label class="form-label" for="regCPass">Confirm Password</label>
-            <input type="password" id="regCPass" name="regCPass" class="form-control" minlength="6" required>
-            <div class="invalid-feedback">Passwords must match.</div>
-          </div>
-        </div>
-        <div class="d-grid mt-4">
-          <button type="submit" class="btn btn-primary">Register</button>
-        </div>
-        <p class="text-center mt-3 mb-0">Already registered? <a href="/danpss/login.html">Login</a></p>
-      </form>
-    </div>
-  </div>
-  <footer class="page-footer">&copy; 2026 DANPSS | Unified Registration and Career Support Platform</footer>
-</main>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="validation.js"></script>
-<script src="assets/js/app-ui.js"></script>
-</body>
-</html>
-
-=======
 
 <!-- Bootstrap CDN -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -243,4 +163,3 @@ Already have an account? <a href="login.html">Login</a>
 <script src="validation.js"></script>
 </body>
 </html>
->>>>>>> 414849608c4551c6b8b230b4fd34394e9265c393
